@@ -1,21 +1,46 @@
 /*
-Write a function that rotates a NxN matrix 90 degrees clockwise.
-A matrix, also called a 2-D array, is simply an array of arrays of values.
+Given an image represented by an NxN matrix, where each pixel in the image is 4 bytes, write a method to rotate the image by 90 degrees.
+Can you do this in place?
 */
 
 let rotateMatrix = matrix => {
-  if(matrix.length === 1) {
-    return matrix;
+  let matrixLen = matrix.length;
+  let rows;
+  let columns;
+
+  if (matrixLen % 2 === 0) {
+    rows = matrixLen / 2;
+    columns = rows;
+  } else {
+    rows = Math.floor(matrixLen / 2);
+    columns = rows;
   }
 
-  var arr = [];
-  for(var x = 0; x < matrix.length; x++) {
-    var temp = []; 
-    for(var y = matrix[0].length - 1; y >= 0; y--) {
-      temp.push(matrix[y][x]);
+  for (let row = 0; row < rows; row++) {
+    for (let column = 0; column < columns; column++) {
+      let topLeft = matrix[row][column];
+      let topRight = matrix[column][matrixLen - 1 - row];
+      let bottomRight = matrix[matrixLen - 1 - row][matrixLen - 1 - column];
+      let bottomLeft = matrix[matrixLen - 1 - column][row];
+      matrix[row][column] = bottomLeft;
+      matrix[column][matrixLen - 1 - row] = topLeft;
+      matrix[matrixLen - 1 - row][matrixLen - 1 - column] = topRight;
+      matrix[matrixLen - 1 - column][row] = bottomRight;
     }
-    arr.push(temp);
   }
 
-  return arr;
+  if (matrixLen % 2 === 1) {
+    for (let row = 0; row < rows; row++) {
+      let top = matrix[row][columns];
+      let right = matrix[columns][matrixLen - 1 - row];
+      let bottom = matrix[matrixLen - 1 - row][columns];
+      let left = matrix[columns][row];
+      matrix[row][columns] = left;
+      matrix[columns][matrixLen - 1 - row] = top;
+      matrix[matrixLen - 1 - row][columns] = right;
+      matrix[columns][row] = bottom;
+    }
+  }
+
+  return matrix;
 };
