@@ -4,6 +4,7 @@ Can you do this in place?
 */
 
 let rotateMatrix = matrix => {
+  matrix = matrix.slice();
   let matrixLen = matrix.length;
   let rows;
   let columns;
