@@ -8,4 +8,10 @@ Input: "Mr John Smith     ", 13
 Output: "Mr%20JohnSmith"
 */
 
-let URLify = (str, strLen) => str.substring(0, strLen).replace(/\s/g, '%20')
+let URLify = (str, strLen) => {
+  if (typeof str !== 'string' || typeof strLen !== 'number') {
+    return null;
+  }
+
+  return str.substring(0, strLen).replace(/\s/g, '%20')
+};

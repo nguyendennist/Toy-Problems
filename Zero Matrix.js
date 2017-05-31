@@ -3,6 +3,17 @@ Write an algorithm such that if an element in an MxN matrix is 0, its entire row
 */
 
 let zeroMatrix = matrix => {
+  if (!Array.isArray(matrix)) {
+    return null;
+  }
+
+  for (let row = 0; row < matrix.length; row++) {
+    let matrixRow = matrix[row];
+    if (!Array.isArray(matrixRow)) {
+      return null;
+    }
+  }
+
   matrix = matrix.slice();
   let change = [];
 

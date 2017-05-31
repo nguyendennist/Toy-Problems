@@ -1,6 +1,10 @@
 // Given two strings, write a method to decide if one is a permutation of the other.
 
 let checkPermutation = (str1, str2) => {
+  if (typeof str1 !== 'string' || typeof str2 !== 'string') {
+    return null;
+  }
+
   if (str1.length !== str2.length) {
     return false;
   }

@@ -17,6 +17,10 @@ Output: false
 */
 
 let oneAway = (str1, str2) => {
+  if (typeof str1 !== 'string' || typeof str2 !== 'string') {
+    return null;
+  }
+
   if (str1 === str2) {
     return true;
   }

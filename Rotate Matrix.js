@@ -4,6 +4,17 @@ Can you do this in place?
 */
 
 let rotateMatrix = matrix => {
+  if (!Array.isArray(matrix)) {
+    return null;
+  }
+
+  for (let row = 0; row < matrix.length; row++) {
+    let matrixRow = matrix[row];
+    if (!Array.isArray(matrixRow)) {
+      return null;
+    }
+  }
+
   matrix = matrix.slice();
   let matrixLen = matrix.length;
   let rows;

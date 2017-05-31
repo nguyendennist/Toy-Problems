@@ -17,7 +17,11 @@ Input: ''
 Output: ''
 */
 
-let stringCompression = (str) => {
+let stringCompression = str => {
+  if (typeof str !== 'string') {
+    return null;
+  }
+
   let compressedStr = '';
   let currentCharCount = 1;
 

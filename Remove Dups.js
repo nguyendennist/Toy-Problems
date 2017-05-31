@@ -48,8 +48,12 @@ Output:
 }
 */
 
-let removeDups = (linkedList) => {
-  let copy = JSON.parse(JSON.stringify(linkedList));
+let removeDups = head => {
+  if (typeof head !== 'object') {
+    return head;
+  }
+
+  let copy = JSON.parse(JSON.stringify(head));
   let copyValues = {};
   let copyFirstValue = JSON.stringify(copy.value);
   copyValues[copyFirstValue] = true;

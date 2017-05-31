@@ -8,7 +8,11 @@ Input: Tact Coa
 Output: True (permutations: "taco cat", "atco cta", etc.)
  */
 
-let palindromePermutation = (str) => {
+let palindromePermutation = str => {
+  if (typeof str !== 'string') {
+    return null;
+  }
+
   str = str.toLowerCase();
   let chars = {};
   let oddNumChars = 0;
