@@ -3,7 +3,7 @@ Given an image represented by an NxN matrix, where each pixel in the image is 4 
 Can you do this in place?
 */
 
-let rotateMatrix = matrix => {
+const rotateMatrix = matrix => {
   if (!Array.isArray(matrix)) {
     return null;
   }

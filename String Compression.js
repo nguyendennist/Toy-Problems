@@ -17,7 +17,7 @@ Input: ''
 Output: ''
 */
 
-let stringCompression = str => {
+const stringCompression = str => {
   if (typeof str !== 'string') {
     return null;
   }

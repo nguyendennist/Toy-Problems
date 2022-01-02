@@ -1,6 +1,6 @@
 // Given two strings, write a method to decide if one is a permutation of the other.
 
-let checkPermutation = (str1, str2) => {
+const checkPermutation = (str1, str2) => {
   if (typeof str1 !== 'string' || typeof str2 !== 'string') {
     return null;
   }
@@ -22,10 +22,10 @@ let checkPermutation = (str1, str2) => {
   }
 
   return true;
-}
+};
 
 // Helper function
-let countChars = (str) => {
+const countChars = (str) => {
   let chars = {};
   for (let x = 0; x < str.length; x++) {
     let char = str.charAt(x);
@@ -36,4 +36,4 @@ let countChars = (str) => {
     }
   }
   return chars;
-}
+};

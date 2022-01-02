@@ -2,7 +2,7 @@
 Implement an algorithm to find the kth to last element of a singly linked list.
 
 Examples:
-Input: 
+Input:
 2,
 {
   value: 5,
@@ -36,7 +36,7 @@ Input:
 Output: 1
 */
 
-let returnKthToLast = (kthToLast, head) => {
+const returnKthToLast = (kthToLast, head) => {
   if (typeof kthToLast !== 'number' || typeof head !== 'object') {
     return null;
   }

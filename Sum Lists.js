@@ -7,7 +7,7 @@ Input: (7 -> 1 -> 6) + (5 -> 9 -> 2). That is , 617 + 295.
 Output: (2 -> 1 -> 9). That is, 912.
 */
 
-let sumLists = (head1, head2) => {
+const sumLists = (head1, head2) => {
   let num1 = linkedListToNum(head1);
   let num2 = linkedListToNum(head2);
   let resultNum = num1 + num2;
@@ -15,7 +15,7 @@ let sumLists = (head1, head2) => {
   return numToLinkedList(resultNum);
 };
 
-let linkedListToNum = head => {
+const linkedListToNum = head => {
   let num = '';
 
   for (let pointer = head; pointer; pointer = pointer.next) {
@@ -25,11 +25,11 @@ let linkedListToNum = head => {
   return JSON.parse(num);
 };
 
-let numToLinkedList = num => {
+const numToLinkedList = num => {
   let strNum = JSON.stringify(num);
   let result = {};
   let pointer = result;
-  
+
   for (let x = strNum.length - 1; x >= 1; x--, pointer = pointer.next) {
     pointer.value = JSON.parse(strNum.charAt(x));
     pointer.next = {};
