@@ -9,7 +9,7 @@ Output: nothing is returned, but the new linked list looks like a -> b -> d -> e
 Note: You are given the middleNode.
 */
 
-let deleteMiddleNode = (middleNode) => {
+const deleteMiddleNode = (middleNode) => {
   let nextNode = middleNode.next;
 
   middleNode.value = nextNode.value;

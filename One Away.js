@@ -16,7 +16,7 @@ Input: pale, bake
 Output: false
 */
 
-let oneAway = (str1, str2) => {
+const oneAway = (str1, str2) => {
   if (typeof str1 !== 'string' || typeof str2 !== 'string') {
     return null;
   }

@@ -6,26 +6,16 @@ limited to just dictionary words.
 Example
 Input: Tact Coa
 Output: True (permutations: "taco cat", "atco cta", etc.)
- */
+*/
 
-let palindromePermutation = str => {
+const palindromePermutation = str => {
   if (typeof str !== 'string') {
     return null;
   }
 
   str = str.toLowerCase();
-  let chars = {};
+  const chars = countChars(str);
   let oddNumChars = 0;
-
-  for (let x = 0; x < str.length; x++) {
-    let char = str.charAt(x);
-    if (chars[char]) {
-      chars[char]++;
-    }
-    if (!chars[char] && char !== " ") {
-      chars[char] = 1;
-    }
-  }
 
   for (let char in chars) {
     if (chars[char] % 2) {
@@ -37,4 +27,30 @@ let palindromePermutation = str => {
   }
 
   return true;
-}
+};
+
+const countChars = str => {
+  const chars = {};
+
+  for (let x = 0; x < str.length; x++) {
+    let char = str.charAt(x);
+    if (chars[char]) {
+      chars[char]++;
+    }
+    if (!chars[char] && char !== " ") {
+      chars[char] = 1;
+    }
+  }
+
+  return chars;
+};
+
+console.log(palindromePermutation('racecar')); // true
+console.log(palindromePermutation('aaccerr')); // true
+console.log(palindromePermutation('hannah')); // true
+console.log(palindromePermutation('ham mam')); // false
+console.log(palindromePermutation('oovoo')); // true
+console.log(palindromePermutation('home')); // false
+console.log(palindromePermutation('r')); // true
+console.log(palindromePermutation('rv')); // false
+console.log(palindromePermutation('rvvr')); // true

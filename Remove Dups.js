@@ -2,7 +2,7 @@
 Write code to remove duplicates from an unsorted linkedin list.
 
 Examples:
-Input: 
+Input:
 {
   value: 5,
   next: {
@@ -14,7 +14,7 @@ Input:
   }
 }
 
-Output: 
+Output:
 {
   value: 5,
   next: {
@@ -26,7 +26,7 @@ Output:
   }
 }
 
-Input: 
+Input:
 {
   value: 5,
   next: {
@@ -48,7 +48,7 @@ Output:
 }
 */
 
-let removeDups = head => {
+const removeDups = head => {
   if (typeof head !== 'object') {
     return head;
   }
